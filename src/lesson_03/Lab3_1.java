@@ -1,6 +1,7 @@
 package lesson_03;
 
 public class Lab3_1 {
+    //Count how many odd, even number(s) in an integer array
     public static void main(String[] args) {
         int[] intArr = {1, 2, 3, 4, 5};
         int even_count = 0;
