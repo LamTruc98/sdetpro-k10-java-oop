@@ -1,16 +1,31 @@
 package lesson_06;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Lab6_1 {
+    //Given input string: "84hrs and 5 minutes"
+    //Please calculate how many minutes in total
     public static void main(String[] args) {
-        String value = "2hrs and 5 minutes";
-        String[] resultList = value.split(" and");
-        int totalMinutes = 0;
-        if(resultList.length == 4) {
-            totalMinutes = Integer.parseInt(resultList[0]) * 60 + Integer.parseInt(resultList[2]);
-        } else {
-            totalMinutes = Integer.parseInt(resultList[0]);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input your time: ");
+        String myStrTime = scanner.nextLine();
+        String[] splitTime = myStrTime.split(" ");
+        int hours = 0, minutes = 0;
+        for (int i = 0; i < splitTime.length; i++) {
+            if (splitTime[i].contains("hrs")) {
+                String spitTimeHour = splitTime[i].replaceAll("[^0-9]", "");
+                hours = hours + Integer.parseInt(spitTimeHour);
+                minutes = hours * 60;
+            }
+            if (splitTime[i].equals("minutes")) {
+                minutes = minutes + Integer.parseInt(splitTime[i - 1]);
+            }
         }
-        System.out.println(totalMinutes);
+        System.out.printf("Total minutes is: %d ", minutes);
+
 
     }
 }
+
