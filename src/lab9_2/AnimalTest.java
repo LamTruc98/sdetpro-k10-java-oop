@@ -11,7 +11,7 @@ public class AnimalTest {
 
         List<Animals> animalsList = Arrays.asList(hors, tiger, dog);
         List<Animals> setRandomSpeed = AnimalController.setRandomSpeed(animalsList);
-        System.out.println("Winner is: " + AnimalController.speedUp(animalsList));
+        System.out.println("Winner is: " + AnimalController.winner(animalsList));
 
     }
 }

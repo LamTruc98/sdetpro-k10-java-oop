@@ -1,5 +1,6 @@
 package lab9_2;
 
+import lab10.RacingAnimals;
 import lab9_1.Employee;
 
 import java.security.SecureRandom;
@@ -13,12 +14,13 @@ public class AnimalController  {
             Random random = new SecureRandom();
             int randomSpeed = random.nextInt(animals.getSpeed());
             animals.setSpeed(randomSpeed);
-            System.out.println("The animal name "+ animals.getAnimalName()+ "is: " +animals.getSpeed());
+            System.out.println("The speed of animal "+ animals.getAnimalName()+ "is: " +animals.getSpeed());
         }
         return animalsList;
+
     }
 
-    public static String speedUp(List<Animals> animalsList) {
+    public static String winner(List<Animals> animalsList) {
         int winSpeed = animalsList.get(0).getSpeed();
         String winner = animalsList.get(0).getAnimalName();
         for (Animals animals : animalsList) {
