@@ -3,14 +3,17 @@ package lab9_2;
 import lab9_1.Employee;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-public class AnimalController {
+public class AnimalController  {
     public static List setRandomSpeed(List<Animals> animalsList) {
         for (Animals animals : animalsList) {
-            int randomSpeed = new SecureRandom().nextInt(animals.getMaxSpeed());
+            Random random = new SecureRandom();
+            int randomSpeed = random.nextInt(animals.getSpeed());
             animals.setSpeed(randomSpeed);
-            System.out.println("name"+ animals.getAnimalName()+ "speed" +animals.getSpeed());
+            System.out.println("The animal name "+ animals.getAnimalName()+ "is: " +animals.getSpeed());
         }
         return animalsList;
     }

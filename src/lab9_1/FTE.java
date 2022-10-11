@@ -6,4 +6,9 @@ public class FTE extends Employee {
     public int getSalary() {
         return 50000;
     }
+
+    @Override
+    public String getName() {
+        return "Full time employee";
+    }
 }

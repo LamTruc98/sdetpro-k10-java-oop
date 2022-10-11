@@ -8,7 +8,7 @@ public class EmployeeController {
         int totalSalary = 0;
         for (Employee employee : employeeList) {
             totalSalary+= employee.getSalary();
-            System.out.println(employee.getSalary());
+            System.out.println("Salary of "+employee.getName() + ": "+employee.getSalary());
 
         }
         return totalSalary;
